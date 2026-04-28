@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            height: 4000px; /* 스크롤 테스트를 위한 높이 설정 */
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+
+        .red-box {
+            background-color: red;
+        }
+
+        .green-box {
+            background-color: green;
+            position: fixed; /* 브라우저 창에 대해 고정된 위치에 배치 */
+            left: 50px;
+            top: 50px;
+            z-index: 5; /* 요소의 쌓임 순서 지정, 숫자가 클수록 위에 배치 */
+        }
+
+        .blue-box {
+            background-color: blue;
+        }
+
+        .top-box {
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+            position: fixed;
+            right: 50px;
+            bottom: 100px; 
+        }
+
+        .navbar {
+            height: 100px;
+            background-color: lightblue;
+            position: sticky; /* 스크롤 위치에 따라 상대적과 고정된 위치 사이에서 전환됨 */
+            top: 50px; /* 스크롤이 50px 이상 내려가면 고정됨 */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box red-box"></div>
+    <div class="box green-box"></div>
+    <div class="box blue-box"></div>
+
+    <div class="navbar"></div>
+
+    <div class="top-box"></div>
+
+</body>
+</html>
