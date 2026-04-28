@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        /* th { color:blue; } */
+        /* td { color:red; } */
+        /*
+        tr:nth-of-type(2) { color: red; }
+        tr:nth-of-type(4) { color: red; }
+        tr:nth-of-type(6) { color: red; }
+        */
+        /* tr:nth-of-type(even) { color: red; } */
+
+
+        #color-blue1 { color:blue; }
+            
+        /* .color-blue { color:blue; }
+        .color-red { color:red; } */
+
+
+        .quiz-table .color-blue { color:blue; }
+        .quiz-table .color-red { color:red; }
+
+        #table-id1 .color-blue { color:lightblue; }
+        #table-id1 .color-red { color:lightcoral; }
+
+    </style>
+</head>
+
+<body>
+    <table class="quiz-table">
+        <!-- <tr>
+            <th id="color-blue1" class="color-blue">순번</th>
+            <th class="color-blue">아이디</th>
+            <th class="color-blue">이름</th=>
+        </tr> -->
+        <tr class="color-blue">
+            <th>순번</th>
+            <th>아이디</th>
+            <th>이름</th=>
+        </tr>
+        <tr>
+            <td class="color-red">1</td>
+            <td class="color-red">apple12</td>
+            <td class="color-red">유재석</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>orange5</td>
+            <td>강호동</td>
+        </tr>
+        <tr  class="color-red">
+            <td>3</td>
+            <td>freshwater</td>
+            <td>신동엽</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>takcard</td>
+            <td>탁재훈</td>
+        </tr>
+        <tr  class="color-red">
+            <td>5</td>
+            <td>lognyeon</td>
+            <td>장도연</td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <table id="table-id1">
+        <!-- <tr>
+            <th id="color-blue1" class="color-blue">순번</th>
+            <th class="color-blue">아이디</th>
+            <th class="color-blue">이름</th=>
+        </tr> -->
+        <tr class="color-blue">
+            <th>순번</th>
+            <th>아이디</th>
+            <th>이름</th=>
+        </tr>
+        <tr>
+            <td class="color-red">1</td>
+            <td class="color-red">apple12</td>
+            <td class="color-red">유재석</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>orange5</td>
+            <td>강호동</td>
+        </tr>
+        <tr  class="color-red">
+            <td>3</td>
+            <td>freshwater</td>
+            <td>신동엽</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>takcard</td>
+            <td>탁재훈</td>
+        </tr>
+        <tr  class="color-red">
+            <td>5</td>
+            <td>lognyeon</td>
+            <td>장도연</td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
