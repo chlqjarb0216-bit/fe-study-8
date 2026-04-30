@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* 전체선택자 -> 모든 요소에 기본 세팅 적용 */
+        * {
+            margin: 0;  /* 외부 여백 0 */
+            padding: 0; /* 내부 여백 0 */
+            box-sizing: border-box;
+            /* 박스모델에 사이즈 지정시, border 까지 사이즈 로 인식 */
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: repeat(3, 100px);
+
+            grid-template-areas: 
+            "header header header"
+            "sidebar content content"
+            "footer footer footer"
+            ;
+
+            #header {
+                grid-area: header;
+                background-color: orange;
+            }
+            #sidebar {
+                grid-area: sidebar;
+                background-color: lightgreen;
+            }
+            #content {
+                grid-area: content;
+                background-color: lightseagreen;
+            }
+            #footer {
+                grid-area: footer;
+                background-color: lightpink;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="header"></div>
+        <div id="sidebar"></div>
+        <div id="content"></div>
+        <div id="footer"></div>
+    </div>
+    
+</body>
+</html>
