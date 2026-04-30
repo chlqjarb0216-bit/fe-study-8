@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* 전체선택자 -> 모든 요소에 기본 세팅 적용 */
+        * {
+            margin: 0;  /* 외부 여백 0 */
+            padding: 0; /* 내부 여백 0 */
+            box-sizing: border-box;
+            /* 박스모델에 사이즈 지정시, border 까지 사이즈 로 인식 */
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+            background-color: blue;
+            position: relative;
+            /* transition-property: all;
+            transition-duration: 0.3s; */
+            animation-name: ani2;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes ani1 {
+            0% {
+                background-color: blue;
+                left: 0px;
+                transform: rotate(0deg);
+            }
+            50% {
+                background-color: orange;
+                left: 200px;
+                transform: rotate(360deg);
+            }
+            100% {
+                background-color: pink;
+                left: 400px;
+                transform: rotate(720deg);
+            }
+        }
+
+        /* 트랜스폼을 여러개 처리하는 경우 한줄에 적용 */
+        @keyframes ani2 {
+            0% {
+                background-color: blue;
+                transform: translateX(0px) rotate(0deg);
+            }
+            50% {
+                background-color: orange;
+                transform: translateX(200px) rotate(360deg);
+            }
+            100% {
+                background-color: pink;
+                transform: translateX(400px) rotate(720deg);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

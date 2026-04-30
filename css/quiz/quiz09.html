@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* 전체선택자 -> 모든 요소에 기본 세팅 적용 */
+        * {
+            margin: 0;  /* 외부 여백 0 */
+            padding: 0; /* 내부 여백 0 */
+            box-sizing: border-box;
+            /* 박스모델에 사이즈 지정시, border 까지 사이즈 로 인식 */
+        }
+
+        .container {
+            background-color: lightgray;
+        }
+
+        .container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            transition-property: all;
+            transition-duration: 0.3s;
+        }
+
+        .r-box {
+            background-color: red;
+        }
+
+        .b-box {
+            background-color: blue;
+        }
+
+        .bk-box {
+            background-color: black;
+            /* position: relative;
+            left: 0; */
+        }
+
+        .g-box {
+            background-color: green;
+            float: left;
+        }
+
+        .o-box {
+            background-color: orange;
+            float: left;
+        }
+
+        .container:hover .r-box {
+            width: 400px;
+        }
+
+        .container:hover .b-box {
+            background-color: purple;
+        }
+
+        .container:hover .bk-box {
+            /* left: 200px; */
+            transform: translateX(200px);
+        }
+
+        .g-box:hover, .o-box:hover {
+            border: 10px solid red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box r-box"></div>
+        <div class="box b-box"></div>
+        <div class="box bk-box"></div>
+        <div class="box g-box"></div>
+        <div class="box o-box"></div>
+    </div>
+</body>
+</html>
