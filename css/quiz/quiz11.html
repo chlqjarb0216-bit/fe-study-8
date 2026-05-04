@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* 전체선택자 -> 모든 요소에 기본 세팅 적용 */
+        * {
+            margin: 0;  /* 외부 여백 0 */
+            padding: 0; /* 내부 여백 0 */
+            box-sizing: border-box;
+            /* 박스모델에 사이즈 지정시, border 까지 사이즈 로 인식 */
+        }
+
+        /* body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+
+        .container {
+            margin: 0 auto;
+            width: fit-content;
+            display: grid;
+            grid-template-columns: 200px 100px 100px 200px 200px;
+            grid-template-rows: 90px 90px 120px 120px 120px;
+
+            grid-template-areas: 
+                "top-left top-left top-left top-right top-right"
+                "top2 top2 top2 top2 top2"
+                "left left right-up right-up right-up"
+                "left left right-down right-down right-down"
+                "bottom-1 bottom-2 bottom-2 bottom-3 bottom-4"
+            ;
+
+            border: 2px solid black;
+            background-color: yellow;
+        }
+
+        .top-left { 
+            grid-area: top-left; 
+            /* background-color: yellow; */
+        }
+        .top-right { 
+            grid-area: top-right; 
+            background-color: gray;
+        }
+        .top2 { 
+            grid-area: top2; 
+            background-color: purple;
+        }
+        .left { 
+            grid-area: left; 
+            background-color: lightsteelblue;
+        }
+        .right-up { 
+            grid-area: right-up; 
+            /* background-color: yellow; */
+        }
+        .right-down { 
+            grid-area: right-down; 
+            background-color: lightsalmon;
+        }
+        .bottom-1 { 
+            grid-area: bottom-1; 
+            /* background-color: yellow; */
+        }
+        .bottom-2 { 
+            grid-area: bottom-2; 
+            background-color: orange;
+        }
+        .bottom-3 { 
+            grid-area: bottom-3; 
+            /* background-color: yellow; */
+        }
+        .bottom-4 { 
+            grid-area: bottom-4; 
+            background-color: lightgreen;
+        }
+
+        .container > div {
+            border: 2px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-left"></div>
+        <div class="top-right"></div>
+        <div class="top2"></div>
+        <div class="left"></div>
+        <div class="right-up"></div>
+        <div class="right-down"></div>
+        <div class="bottom-1"></div>
+        <div class="bottom-2"></div>
+        <div class="bottom-3"></div>
+        <div class="bottom-4"></div>
+    </div>
+</body>
+</html>
