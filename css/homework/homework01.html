@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            background-color: lightgray;
+            opacity: 1;
+        }
+
+        /* 전체선택자 -> 모든 요소에 기본 세팅 적용 */
+        * {
+            margin: 0;  /* 외부 여백 0 */
+            padding: 0; /* 내부 여백 0 */
+            box-sizing: border-box;
+            /* 박스모델에 사이즈 지정시, border 까지 사이즈 로 인식 */
+        }
+
+        .container-body {
+            margin: 50px auto;
+            width: 300px;
+            padding-bottom: 0.5rem;
+            background-color: white;
+            border-radius: 10px;
+            /* display: flex; 
+            justify-content: center;
+            align-items: center; */
+        }
+
+        button {
+            margin: 0.8rem;
+            float: right;
+            background-color: transparent;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .container {
+            margin: 0 1.5rem;
+            clear: both;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: flex-start;
+            gap: 2rem;
+            margin: 2rem 0;
+            border-bottom: 1px solid lightgray;
+        }
+
+        [type="radio"] {
+            display: none;
+        }
+
+        .top-bar label {
+            padding-bottom: 0.5rem;
+            cursor: pointer;
+            color:lightgray;
+        }
+
+        #login:checked ~ .top-bar label[for="login"],
+        #signup:checked ~ .top-bar label[for="signup"] {
+            border-bottom: 2px solid cornflowerblue;
+            font-weight: bold;
+            color: cornflowerblue;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        input:nth-child(2n) {
+            padding: 0.5rem;
+            border: 1px solid lightgray;
+            margin-bottom: 0.5rem;
+        }
+
+        label[for="terms"] {
+            display: flex;
+            align-items: center;
+            gap: 0.1rem;
+            font-size: 0.8rem;
+            margin-left: 0.1rem;
+        }
+
+        label a {
+            color: black;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        input[type="submit"] {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background-color: cornflowerblue;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .sns {
+            display: block;
+            text-align: center;
+            color: cornflowerblue;
+        }
+
+        #login:checked ~ form #name,
+        #login:checked ~ form [for="name"],
+        #login:checked ~ form #password-confirm,
+        #login:checked ~ form [for="password-confirm"],
+        #login:checked ~ form [for="terms"],
+        #login:checked ~ form #terms,
+        #login:checked ~ form input[value="회원 가입하기"],
+        #signup:checked ~ form input[value="로그인"] {
+            display: none;
+        }
+
+        #login:checked ~ .sns {
+            font-size: 0;
+        }
+        #login:checked ~ .sns::after {
+            content: "SNS로 간편하게 로그인하기";
+            font-size: 1rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container-body">
+        <button>×</button>
+
+        <div class="container">
+            <p>지금 가입하시면</p>
+            <p><strong>웰컴쿠폰을 드려요!</strong></p>
+
+            <input type="radio" name="login-type" id="login">
+            <input type="radio" name="login-type" id="signup" checked>
+
+            <div class="top-bar">
+                <label for="login">로그인</label>
+                <label for="signup">회원가입</label>
+            </div>
+
+            <form action="">
+                <label for="email">이메일</label>
+                <input type="email" id="email" placeholder="이메일을 입력해주세요">
+                <label for="name">이름 / 업체명</label>
+                <input type="text" id="name" placeholder="2자 이상 20자 이하">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" placeholder="영문 숫자 특수문자 조합 6-16자리">
+                <label for="password-confirm">비밀번호 확인</label>
+                <input type="password" id="password-confirm" placeholder="비밀번호를 다시 입력해주세요.">
+
+                <label for="terms">
+                    <input type="checkbox" id="terms">
+                    <a href="http://">개인정보수집이용안내</a> 및 <a href="http://">약관</a>에 동의합니다
+                </label>
+
+                <input type="submit" value="회원 가입하기">
+                <input type="submit" value="로그인">
+            </form>
+
+            <a href="http://" class="sns">SNS로 간편하게 가입하기</a>
+        </div>
+    </div>
+</body>
+</html>
