@@ -111,15 +111,16 @@
         <div class="box ani3"></div>
 
         <script>
+            "use strict";
             const boxes = document.getElementsByClassName("box");
 
             function start() {
-                for (box of boxes) {
+                for (const box of boxes) {
                     box.style.animationPlayState = "running";
                 }
             }
             function pause() {
-                for (box of boxes) {
+                for (const box of boxes) {
                     box.style.animationPlayState = "paused";
                 }
             }
