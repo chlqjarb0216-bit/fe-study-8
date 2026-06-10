@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="">
+            <input type="text" id="loginId" placeholder="아이디" />
+            <br />
+            <input type="password" id="loginPw" placeholder="비밀번호" />
+            <br />
+            <button id="btnLogin" onclick="tryLogin()" type="button">로그인 시도</button>
+            <br />
+        </form>
+
+        <script>
+            //코드작성
+            const logId = document.getElementById("loginId");
+            const logPw = document.getElementById("loginPw");
+            const logBtn = document.getElementById("btnLogin");
+
+            // const tryLogin = function () {
+            //     logId.value = "";
+            //     logPw.value = "";
+            // };
+
+            // Option 2
+            const tryLogin = function () {
+                if (logId.value == "") {
+                    alert("아이디를 입력해주세요.");
+                    logId.focus();
+                } else if (logPw.value == "") {
+                    alert("비밀번호를 입력해주세요.");
+                    logPw.focus();
+                } else {
+                    logId.value = "";
+                    logPw.value = "";
+                }
+
+                // submit
+                // document.querySelectorAll("form")[0].submit();
+            };
+
+            logId.addEventListener("keydown", (event) => {
+                const key = event.key;
+
+                console.log(key);
+                if (key == "Enter") {
+                    // Option 1
+                    event.preventDefault();
+                    logPw.focus();
+                }
+            });
+
+            logPw.addEventListener("keydown", (event) => {
+                if (event.key == "Enter") {
+                    event.preventDefault();
+                    tryLogin();
+
+                    // logBtn.click();
+                }
+            });
+        </script>
+    </body>
+</html>
