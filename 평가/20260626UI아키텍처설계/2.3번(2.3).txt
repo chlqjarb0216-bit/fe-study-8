@@ -1,0 +1,5 @@
+2.3 J.Foley 사용자 인터페이스 4단계 모형
+개념 단계(Conceptual Level): 대화형 시스템에 관한 심리적 모형
+의미 단계(Semantic Level): 입력명령과 출력결과가 사용자에게 주는 의미를 표현
+문구(구문) 단계(Syntatic Level): 명령문을 이루는 단어들의 정의
+어휘 단계(Lexical Level): 특정 명령문구를 형성하는 절차 등을 의미
